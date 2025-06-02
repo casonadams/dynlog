@@ -1,0 +1,16 @@
+[package]
+name = "dynlog"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = []
+file-trigger = []
+socket-trigger = ["tokio", "tokio/net"]
+
+[dependencies]
+atty = "0.2.14"
+log = "0.4"
+time = { version = "0.3", default-features = false, features = ["formatting", "macros"] }
+tokio = { version = "1", optional = true, features = ["rt-multi-thread", "macros", "net", "io-util"] }
+
